@@ -1,0 +1,15 @@
+{
+  "name": "openconf",
+  "version": "1.0.0",
+  "description": "A CRUD base application that aims to solidify my knowledge of the MEAN stack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "conference",
+    "open-source"
+  ],
+  "author": "Kenrick Wu",
+  "license": "ISC"
+}
