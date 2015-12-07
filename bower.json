@@ -1,15 +1,19 @@
 {
-  "name": "openconf",
-  "version": "1.0.0",
-  "authors": [
-    "Kenrick Wu <kenrick.wu@gmail.com>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+    "name": "openconf",
+    "version": "1.0.0",
+    "description": "openconf",
+    "authors": [],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "devDependencies": {
+    },
+    "main": "",
+    "moduleType": [],
+    "homepage": ""
 }
