@@ -16,7 +16,7 @@ export class SpeakerService {
         .then((response) => response.content);
    }
 
-   getSpeakerByid(id) {
+   getSpeakerById(id) {
       return this.http
         .get(baseUrl + id)
         .then((response) => response.content);

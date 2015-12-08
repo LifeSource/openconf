@@ -1,0 +1,12 @@
+<template>
+
+    <h3>Speakers list</h3>
+
+    <ul class="speakers-list">
+        <li repeat.for="speaker of speakers">
+            <div click.delegate="speakerDetails(speaker._id)">
+                <img src="${speaker.imageUrl}" alt="${speaker.name}'s image" />
+            </div>
+        </li>
+    </ul>
+</template>

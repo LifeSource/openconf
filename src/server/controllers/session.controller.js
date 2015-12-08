@@ -1,6 +1,6 @@
 module.exports = function() {
 
-    var Session = require("../models/session");
+    var Session = require("../models/session.model");
 
     var sessionController = {
         use: use,
@@ -16,7 +16,14 @@ module.exports = function() {
 
     function use(req, res, next) {
        Session.findById(req.params.id,  function (err, session) { 
-           (err) ? res.status(500).send(err) : res.json(session);
+           if (err) {
+               res.status(500).send(err);
+           } else if (session) {
+               req.session = session;
+               next();
+           } else {
+                res.status(404).send("No session found!");
+           }
        });
     }
 
@@ -36,7 +43,7 @@ module.exports = function() {
         var session = new Session(req.body);
 
         session.save(function (err, session) {
-            (err) ? res.status(500).send(err) : res.status(201).send(sesson);
+            (err) ? res.status(500).send(err) : res.status(201).send(session);
         });
     }
 

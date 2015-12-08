@@ -1,0 +1,26 @@
+<template>
+
+    <h3>Sessions</h3>
+    <div class="session-dash">
+    </div>
+    <ul class="sessions-list">
+        <li repeat.for="session of sessions">
+            <div>
+                <div>
+                    image goes here
+                </div>
+                <div>
+                    <h4> ${session.name} </h4>
+                </div>
+                <div>
+                    <strong>Slots available:</strong> ${session.slots}
+                    <br />
+                    <strong>Location:</strong> ${session.location}
+                    <br />
+                    <strong>When:</strong> ${session.time}
+                </div>
+                <button class="btn btn-xs btn-warning pull-right">Edit</button>
+            </div>
+        </li>
+    </ul>
+</template>

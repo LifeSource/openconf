@@ -16,25 +16,25 @@ export class SessionService {
             .then((response) => response.content);
     }
 
-    getById(id) {
+    getSessionById(id) {
         return this.http
             .get(baseUrl + id)
             .then((response) => response.content);
     }
 
-    post(session) {
+    saveSession(session) {
         return this.http
             .post(baseUrl, session)
             .then((response) => response.content);
     }
 
-    update(session) {
+    updateSession(session) {
         return this.http
             .put(baseUrl + session._id, session)
             .then((response) => response.content);
     }
 
-    remove(id) {
+    removeSession(id) {
         return this.http
             .delete(baseUrl + id)
             .then((response) => response.statusCode);

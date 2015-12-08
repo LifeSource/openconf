@@ -1,5 +1,7 @@
 module.exports = function() {
 
+    var Address = require("../models/address.model");
+
     var addressController = {
         use: use,
         query: query,

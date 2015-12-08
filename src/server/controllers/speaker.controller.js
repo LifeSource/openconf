@@ -1,6 +1,6 @@
 module.exports = function() {
 
-    var Speaker = require("../models/speaker");
+    var Speaker = require("../models/speaker.model");
 
     var speakerController = {
         use: use,

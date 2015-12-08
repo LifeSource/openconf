@@ -5,7 +5,12 @@
 body {
   font-family: "Open Sans", serif;
 }
-a {
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #333;
   text-decoration: none;
 }
 ul {
@@ -15,4 +20,19 @@ ul {
 }
 .text-center {
   text-align: center;
+}
+header {
+  background: #ff0;
+}
+.sessions-list li {
+  margin-bottom: 20px;
+}
+.nav-list li,
+.speakers-list li {
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-right: 1.6%;
+}
+footer {
+  clear: both;
 }

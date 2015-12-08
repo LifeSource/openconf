@@ -1,0 +1,16 @@
+<template>
+    <h3>Profile</h3>
+    <div class="profile col-md-4">
+
+        <img src="${speaker.imageUrl}" alt="${speaker.name}'s profile image" />
+        <strong>Name:</strong> ${speaker.name}
+        
+    </div>
+
+    <div class="expertises col-md-4">
+        <h3>Expertises</h3>
+        <div repeat.for="ex of speaker.expertises">
+            ${ex} 
+        </div>
+    </div>
+</template>

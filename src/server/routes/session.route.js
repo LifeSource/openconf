@@ -1,5 +1,5 @@
-var express = require("express"),
-    sessionRouter = express.Router(),
+var express           = require("express"),
+    sessionRouter     = express.Router(),
     sessionController = require("../controllers/session.controller")();
 
 sessionRouter.route("/")

@@ -1,13 +1,18 @@
 var mongoose = require("mongoose"),
-    Address = require("../models/address"),
-    Speaker = require("../models/speaker");
+    Address = require("../models/address.model"),
+    Speaker = require("../models/speaker.model");
 
 var sessionSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    location: Address.schema,
+    location: String,
+    time: String,
+    sessionDate:{ 
+        type: Date,
+        default: new Date()
+    },
     duration: Number,
     slots: {
         type: Number,
