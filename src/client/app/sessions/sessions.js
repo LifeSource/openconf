@@ -1,26 +1,31 @@
 import "bootstrap/css/bootstrap.css!";
+import "font-awesome/css/font-awesome.css!";
 
 import {inject} from "aurelia-framework";
+import {Router} from "aurelia-router";
 import {SessionService} from "../sessions/session.service";    
 import {SpeakerService} from "../speakers/speaker.service";
 
-@inject(SessionService, SpeakerService)
+@inject(Router, SessionService, SpeakerService)
 export class Sessions {
 
-    constructor(sessionService, speakerService) {
-       this.sessionService = sessionService; 
+    constructor(router, sessionService, speakerService) {
+       this.router         = router;
+       this.sessionService = sessionService;
        this.speakerService = speakerService;
     }
     
     activate() {
        this.getAllSessions();
-
-       console.log("this sessions: ", this.sessions);
     }
 
     getAllSessions() {
         return this.sessionService
             .getAll()
             .then((sessions) => this.sessions = sessions);
+    }
+
+    addSession() {
+        this.router.navigateToRoute("SessionEdit", {id: 0});
     }
 }

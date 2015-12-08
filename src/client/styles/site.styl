@@ -1,3 +1,5 @@
+coolBlue = #36b3d2
+
 .container
     max-width 1200px
     margin 0 auto
@@ -6,7 +8,7 @@ body
     font-family "Open Sans", serif
 
 a, a:link, a:visited, a:hover, a:active
-    color #333
+    color #33
     text-decoration none
 
 ul
@@ -17,21 +19,56 @@ ul
 .text-center
     text-align center
 
-header
-    background yellow
+// Title
+.title 
+    margin-left 20px
 
 // Navigation
+.nav-list li
+    font-size 1.5em
+    margin-right 1.5%
+    padding-left 1.5%
+    display inline-block
+    border-left 3px solid red
+
+.nav-list li:hover
+    background coolBlue
 
 // Sessions
-.sessions-list li
-    margin-bottom 20px
+
+.sessions-list li:hover
+    padding 20px
+    border-radius 5px
+    background coolBlue
+    transition background 0.8s ease
 
 // Speakers
-.nav-list li,
-.speakers-list li
-    display inline-block
-    margin-bottom 15px
-    margin-right 1.6%
+.thumbnail
+    display block
+    margin 10px auto
 
+.heading-title
+    text-align right
+    margin-right 70px
+    margin-bottom 40px
+
+.speakers-list li
+    width 120px
+    height 140px
+    text-align center
+    display inline-block
+    margin-right 1.5%
+    margin-bottom 20px
+
+.speakers-list li:hover
+    background coolBlue
+    transition background 1.0s ease
+
+// Footer
 footer
     clear both
+    color #ff
+    background #33
+    border-radius 5px
+    padding 20px 0
+

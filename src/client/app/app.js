@@ -25,6 +25,20 @@ export class App {
                 nav: true
             },
             {
+                route: "sessoins/info/:id",
+                name: "SessionDetail",
+                title: "Session Detail",
+                moduleId: "app/sessions/sessionDetail",
+                nav: false 
+            },
+            {
+                route: "sessions/edit/:id",
+                name: "SessionEdit",
+                title: "Session Edit",
+                moduleId: "app/sessions/sessionEdit",
+                nav: false 
+            },
+            {
                 route: "speakers",
                 name: "Speakers",
                 title: "Speakers",
@@ -32,7 +46,14 @@ export class App {
                 nav: true
             },
             {
-                route: "speakers/:id",
+                route: "speakers/edit/:id",
+                name: "SpeakerEdit",
+                title: "Speaker Edit",
+                moduleId: "app/speakers/speakerEdit",
+                nav: false
+            },
+            {
+                route: "speakers/info/:id",
                 name: "SpeakerDetails",
                 title: "Speaker Details",
                 moduleId: "app/speakers/speakerDetail",

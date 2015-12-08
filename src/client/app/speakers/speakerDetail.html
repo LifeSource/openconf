@@ -1,10 +1,14 @@
 <template>
-    <h3>Profile</h3>
     <div class="profile col-md-4">
-
+        <h3>Profile</h3>
         <img src="${speaker.imageUrl}" alt="${speaker.name}'s profile image" />
         <strong>Name:</strong> ${speaker.name}
         
+    </div>
+
+    <div class="bio col-md-4">
+        <h3>Bio</h3>
+        ${speaker.bio}
     </div>
 
     <div class="expertises col-md-4">

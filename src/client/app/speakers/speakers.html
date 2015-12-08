@@ -1,12 +1,17 @@
 <template>
+    <h1 class="heading-title">
+        <i class="fa fa-user"></i>
+        FOUND (${speakers.length})
+    </h1>
 
-    <h3>Speakers list</h3>
-
-    <ul class="speakers-list">
-        <li repeat.for="speaker of speakers">
-            <div click.delegate="speakerDetails(speaker._id)">
-                <img src="${speaker.imageUrl}" alt="${speaker.name}'s image" />
-            </div>
-        </li>
-    </ul>
+    <div>
+        <ul class="speakers-list">
+            <li repeat.for="speaker of speakers">
+                <div class="speaker-tile" click.delegate="speakerDetails(speaker._id)">
+                    <img class="thumbnail" src="${speaker.imageUrl}" alt="${speaker.name}'s image" />
+                    <span>${speaker.name}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
 </template>

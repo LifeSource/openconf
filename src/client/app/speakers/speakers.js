@@ -1,3 +1,6 @@
+import "bootstrap/css/bootstrap.css!";
+import "font-awesome/css/font-awesome.css!";
+
 import {inject} from "aurelia-framework";
 import {Router} from "aurelia-router";
 import {SpeakerService} from "./speaker.service";

@@ -1,17 +1,19 @@
 <template>
 
-    <h3>Sessions</h3>
+    <h1 class="heading-title">
+        <i class="fa fa-bars"></i>
+        Sessions (${sessions.length})
+    </h1>
     <div class="session-dash">
+        <div class="addTile" click.delegate="addSession()">
+            
+        </div>
     </div>
     <ul class="sessions-list">
         <li repeat.for="session of sessions">
             <div>
-                <div>
-                    image goes here
-                </div>
-                <div>
-                    <h4> ${session.name} </h4>
-                </div>
+                <h4> ${session.name} </h4>
+                <button class="btn btn-warning pull-right">Edit</button>
                 <div>
                     <strong>Slots available:</strong> ${session.slots}
                     <br />
@@ -19,7 +21,6 @@
                     <br />
                     <strong>When:</strong> ${session.time}
                 </div>
-                <button class="btn btn-xs btn-warning pull-right">Edit</button>
             </div>
         </li>
     </ul>
