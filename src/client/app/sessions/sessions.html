@@ -1,27 +1,36 @@
 <template>
 
-    <h1 class="heading-title">
+    <h1 class="heading-title sessions-page-title">
         <i class="fa fa-bars"></i>
         Sessions (${sessions.length})
     </h1>
     <div class="session-dash">
         <div class="addTile" click.delegate="addSession()">
-            
+
         </div>
     </div>
-    <ul class="sessions-list">
-        <li repeat.for="session of sessions">
-            <div>
-                <h4> ${session.name} </h4>
-                <button class="btn btn-warning pull-right">Edit</button>
-                <div>
-                    <strong>Slots available:</strong> ${session.slots}
-                    <br />
-                    <strong>Location:</strong> ${session.location}
-                    <br />
-                    <strong>When:</strong> ${session.time}
+
+    <div class="col-md-12">
+
+        <ul class="sessions-list">
+            <li click.delegate="editSession(session._id)" repeat.for="session of sessions">
+                <div class="col-md-2"repeat.for="speaker of session.speakers">
+                        <img src="/images/${speaker.imageUrl}" alt="${speaker.name}' image">
                 </div>
-            </div>
-        </li>
-    </ul>
+                <div>
+                    <h4> ${session.name} </h4>
+                    <button click.delegate="editSession(session._id)" class="btn btn-warning pull-right">Edit</button>
+                    <div>
+                        <strong>Speaker:</strong> ${session.speakers[0].name}
+                        <br>
+                        <strong>Slots:</strong> ${session.slots}
+                        <br />
+                        <strong>When:</strong> ${session.time} &nbsp;
+                        <strong>Location:</strong> ${session.location}
+                        
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </template>

@@ -1,7 +1,10 @@
 <template>
     <ul class="nav-list">
-        <li repeat.for="nav of router.navigation">
-            <a href.bind="nav.href"> ${nav.title} </a>
+        <i repeat.for="icon of icons" class="fa fa-${icon}">${icon}</i>
+        <li repeat.for="nav of router.navigation" class="${nav.isActive ? 'active' : ''}">
+            <a href.bind="nav.href">
+                ${nav.title}
+            </a>
         </li>
     </ul>
 </template>

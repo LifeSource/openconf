@@ -28,4 +28,8 @@ export class Sessions {
     addSession() {
         this.router.navigateToRoute("SessionEdit", {id: 0});
     }
+
+    editSession(id) {
+        this.router.navigateToRoute("SessionEdit", {id: id});
+    }
 }

@@ -1,9 +1,31 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 body {
+  font-family: "Lato", sans-serif;
+}
+.site-heading {
+  margin-bottom: 10px;
   font-family: "Open Sans", serif;
+}
+.navigation {
+  padding: 20px auto;
+  margin-bottom: 20px;
+  font-family: "Open Sans", serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }
 a,
 a:link,
@@ -21,33 +43,44 @@ ul {
 .text-center {
   text-align: center;
 }
+i {
+  color: #71bdd6;
+}
 .title {
   margin-left: 20px;
+}
+.nav-list {
+  margin: 0;
+  padding: 0;
 }
 .nav-list li {
   font-size: 1.5em;
   margin-right: 1.5%;
-  padding-left: 1.5%;
   display: inline-block;
-  border-left: 3px solid #f00;
 }
-.nav-list li:hover {
-  background: #36b3d2;
+.active {
+  border-bottom: 3px solid #f00;
+}
+.sessions-list li {
+  padding: 20px;
+  margin-bottom: 20px;
 }
 .sessions-list li:hover {
-  padding: 20px;
   border-radius: 5px;
-  background: #36b3d2;
-  -webkit-transition: background 0.8s ease;
-  transition: background 0.8s ease;
+  color: #fff;
+  background: #71bdd6;
+  -webkit-transition: border 1s ease;
+  transition: border 1s ease;
+}
+.speakers-list-container,
+.speakers-list {
+  margin: 0 auto;
 }
 .thumbnail {
   display: block;
   margin: 10px auto;
 }
 .heading-title {
-  text-align: right;
-  margin-right: 70px;
   margin-bottom: 40px;
 }
 .speakers-list li {
@@ -55,18 +88,70 @@ ul {
   height: 140px;
   text-align: center;
   display: inline-block;
-  margin-right: 1.5%;
-  margin-bottom: 20px;
+  margin: 1.5% 20px;
 }
 .speakers-list li:hover {
-  background: #36b3d2;
+  background: #71bdd6;
   -webkit-transition: background 1s ease;
   transition: background 1s ease;
 }
+.bio {
+  text-align: justify;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
 footer {
+  text-align: center;
   clear: both;
-  color: #fff;
-  background: #333;
-  border-radius: 5px;
-  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  font-size: 1.5em;
+}
+.venue {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  text-align: justify;
+}
+.venue p {
+  padding: 0;
+  margin: 0;
+}
+.venue img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+@media screen and (min-width: 900px) {
+  .room-image,
+  .room-details {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .bioImage,
+  .speakerProfile,
+  .speakerName {
+    width: 100%;
+  }
+  .sessions-list li {
+    border: 2px solid #333;
+    border-radius: 5px;
+  }
+  .sessions-page-title,
+  .title {
+    text-align: center;
+  }
+  .nav-list {
+    display: none;
+  }
 }

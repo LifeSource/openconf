@@ -1,20 +1,17 @@
 <template>
-    <div class="profile col-md-4">
-        <h3>Profile</h3>
-        <img src="${speaker.imageUrl}" alt="${speaker.name}'s profile image" />
-        <strong>Name:</strong> ${speaker.name}
-        
-    </div>
 
-    <div class="bio col-md-4">
-        <h3>Bio</h3>
-        ${speaker.bio}
-    </div>
-
-    <div class="expertises col-md-4">
-        <h3>Expertises</h3>
-        <div repeat.for="ex of speaker.expertises">
-            ${ex} 
+    <div class="speaker-details">
+        <div class="bio">
+            <div class="bioImage">
+                <img src="/images/${speaker.imageUrl}" alt="${speaker.name}'s profile image" />.
+            </div>
+            <h3 class="speakerName">
+                ${speaker.name}
+            </h3>
+            <div class="speakerProfile">
+                ${speaker.bio}
+            </div>
         </div>
     </div>
+
 </template>

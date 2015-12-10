@@ -1,15 +1,30 @@
-coolBlue = #36b3d2
+coolBlue = #71bdd6
 
 .container
     max-width 1200px
     margin 0 auto
+    justify-content center
 
 body
+    font-family "Lato", sans-serif
+
+.site-heading
+    margin-bottom 10px
     font-family "Open Sans", serif
+
+.navigation
+
+    padding 20px auto
+    margin-bottom 20px
+    font-family "Open Sans", serif
+
+h1, h2, h3, h4, h5, h6 
+    margin 0
+    padding 0
 
 a, a:link, a:visited, a:hover, a:active
     color #33
-    text-decoration none
+    text-decoration none    
 
 ul
     padding 0
@@ -19,37 +34,47 @@ ul
 .text-center
     text-align center
 
+i
+    color coolBlue
+
 // Title
 .title 
     margin-left 20px
 
 // Navigation
+.nav-list
+    margin 0
+    padding 0
+
 .nav-list li
     font-size 1.5em
     margin-right 1.5%
-    padding-left 1.5%
     display inline-block
-    border-left 3px solid red
 
-.nav-list li:hover
-    background coolBlue
+.active
+    border-bottom 3px solid red
 
 // Sessions
+.sessions-list li
+    padding 20px
+    margin-bottom 20px
 
 .sessions-list li:hover
-    padding 20px
     border-radius 5px
+    color #ff
     background coolBlue
-    transition background 0.8s ease
+    transition border 1.0s ease
 
 // Speakers
+.speakers-list-container,
+.speakers-list
+    margin 0 auto
+
 .thumbnail
     display block
     margin 10px auto
 
 .heading-title
-    text-align right
-    margin-right 70px
     margin-bottom 40px
 
 .speakers-list li
@@ -57,18 +82,53 @@ ul
     height 140px
     text-align center
     display inline-block
-    margin-right 1.5%
-    margin-bottom 20px
+    margin 1.5% 20px
 
 .speakers-list li:hover
     background coolBlue
     transition background 1.0s ease
 
+// Speaker Details
+.bio
+    text-align justify
+    display flex
+    flex-wrap wrap 
+
 // Footer
 footer
+    text-align center
     clear both
-    color #ff
-    background #33
-    border-radius 5px
-    padding 20px 0
+    position fixed
+    bottom 0
+    font-size 1.5em
 
+// Venue
+.venue
+     display flex
+     flex-wrap wrap
+     text-align justify
+
+.venue p
+    padding 0
+    margin 0
+
+.venue img
+    max-width 100%
+    margin 0 auto
+    display block
+
+@media screen and (min-width: 900px)
+    .room-image, .room-details
+        width 50%
+
+@media screen and (max-width: 550px)
+    .bioImage, .speakerProfile, .speakerName
+        width 100%
+        //background orange
+    .sessions-list li    
+        border 2px solid #33
+        border-radius 5px
+    .sessions-page-title, .title
+        text-align center
+    .nav-list
+        display none

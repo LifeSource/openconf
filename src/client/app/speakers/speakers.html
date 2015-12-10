@@ -1,14 +1,14 @@
 <template>
-    <h1 class="heading-title">
+    <h1 class="heading-title text-center">
         <i class="fa fa-user"></i>
         FOUND (${speakers.length})
     </h1>
 
-    <div>
+    <div class="speakers-list-container">
         <ul class="speakers-list">
             <li repeat.for="speaker of speakers">
                 <div class="speaker-tile" click.delegate="speakerDetails(speaker._id)">
-                    <img class="thumbnail" src="${speaker.imageUrl}" alt="${speaker.name}'s image" />
+                    <img class="thumbnail" src="/images/${speaker.imageUrl}" alt="${speaker.name}'s image" />
                     <span>${speaker.name}</span>
                 </div>
             </li>

@@ -25,7 +25,7 @@ export class App {
                 nav: true
             },
             {
-                route: "sessoins/info/:id",
+                route: "sessions/info/:id",
                 name: "SessionDetail",
                 title: "Session Detail",
                 moduleId: "app/sessions/sessionDetail",

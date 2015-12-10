@@ -1,5 +1,4 @@
-var mongoose = require("mongoose"),
-    Session = require("../models/session.model");
+var mongoose = require("mongoose");
 
 var speakerSchema = new mongoose.Schema({
     name: {
@@ -7,10 +6,8 @@ var speakerSchema = new mongoose.Schema({
         required: true
     },
     expertises: [String],
-    sessionsId: [String],
     imageUrl: String,
     bio: String
-
 });
 
 module.exports = mongoose.model("Speaker", speakerSchema, "Speakers");
