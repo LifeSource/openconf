@@ -13,6 +13,8 @@ export class Sessions {
        this.router         = router;
        this.sessionService = sessionService;
        this.speakerService = speakerService;
+
+       this.availability = undefined;
     }
     
     activate() {
@@ -29,7 +31,17 @@ export class Sessions {
         this.router.navigateToRoute("SessionEdit", {id: 0});
     }
 
+    showSessionDetails(id) {
+        this.router.navigateToRoute("SessionDetails", { id: id});
+    }
+
     editSession(id) {
         this.router.navigateToRoute("SessionEdit", {id: id});
+    }
+
+    isFull(slots) {
+        console.log("HERE in SLOTS");
+        console.log(slots);
+        return slots === 30;
     }
 }

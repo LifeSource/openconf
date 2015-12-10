@@ -1,2 +1,2 @@
-# openconf
+# OpenConf
 

@@ -8,34 +8,35 @@ coolBlue = #71bdd6
 body
     font-family "Lato", sans-serif
 
+h1, h2, h3, h4, h5, h6 
+    margin 0
+    padding 0
+
+.text-center 
+    text-align center
+
 .site-heading
     margin-bottom 10px
     font-family "Open Sans", serif
 
 .navigation
-
     padding 20px auto
     margin-bottom 20px
     font-family "Open Sans", serif
 
-h1, h2, h3, h4, h5, h6 
-    margin 0
-    padding 0
-
-a, a:link, a:visited, a:hover, a:active
+a,  a:link, a:visited, a:hover, a:active
     color #33
     text-decoration none    
+p
+    font-size 1.1em
 
 ul
     padding 0
     margin 0
     list-style none
 
-.text-center
-    text-align center
-
-i
-    color coolBlue
+i, .heading-title
+    color #aa
 
 // Title
 .title 
@@ -49,10 +50,15 @@ i
 .nav-list li
     font-size 1.5em
     margin-right 1.5%
+    padding 0.5% 2.5%
     display inline-block
 
+.nav-list li:hover
+    transition background 0.8s linear
+
 .active
-    border-bottom 3px solid red
+    border-top 3px solid #ff875f
+    border-bottom 3px solid #ff875f
 
 // Sessions
 .sessions-list li
@@ -60,29 +66,27 @@ i
     margin-bottom 20px
 
 .sessions-list li:hover
-    border-radius 5px
     color #ff
-    background coolBlue
-    transition border 1.0s ease
+    border-radius 10px
+    background #55
+    //background coolBlue
+    transition background 0.8s linear
+
+.slots
+    font-size 48px
 
 // Speakers
-.speakers-list-container,
-.speakers-list
+.speakers-list,
+.speakers-list-container
     margin 0 auto
-
-.thumbnail
-    display block
-    margin 10px auto
 
 .heading-title
     margin-bottom 40px
 
 .speakers-list li
-    width 120px
-    height 140px
+    padding 1.5% 
     text-align center
     display inline-block
-    margin 1.5% 20px
 
 .speakers-list li:hover
     background coolBlue
@@ -124,11 +128,12 @@ footer
 @media screen and (max-width: 550px)
     .bioImage, .speakerProfile, .speakerName
         width 100%
-        //background orange
+
     .sessions-list li    
-        border 2px solid #33
+        border 2px solid #aa
         border-radius 5px
+
     .sessions-page-title, .title
         text-align center
-    .nav-list
+    .nav-list 
         display none

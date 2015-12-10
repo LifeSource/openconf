@@ -26,8 +26,8 @@ export class App {
             },
             {
                 route: "sessions/info/:id",
-                name: "SessionDetail",
-                title: "Session Detail",
+                name: "SessionDetails",
+                title: "Session Details",
                 moduleId: "app/sessions/sessionDetail",
                 nav: false 
             },
