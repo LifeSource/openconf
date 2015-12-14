@@ -1,16 +1,12 @@
 <template>
 
     <div class="speaker-details">
+        <div class="bioImage">
+            <img src="/images/${speaker.imageUrl}" alt="${speaker.name}'s profile image" />.
+        </div>
         <div class="bio">
-            <div class="bioImage">
-                <img src="/images/${speaker.imageUrl}" alt="${speaker.name}'s profile image" />.
-            </div>
-            <h3 class="speakerName">
-                ${speaker.name}
-            </h3>
-            <div class="speakerProfile">
-                ${speaker.bio}
-            </div>
+            <h3 class="speakerName"> ${speaker.name} </h3>
+            <div class="speakerProfile"> ${speaker.bio} </div>
         </div>
     </div>
 

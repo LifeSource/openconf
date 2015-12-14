@@ -2,17 +2,19 @@ var mongoose = require('mongoose');
 var gracefulShutdown;
 
 var connectionString = 'mongodb://localhost/openconf',
-    db = mongoose.connect(connectionString);
+    dbConnection = mongoose.connect(connectionString);
 
-db.connection.on('connected', function() {
+dbConnection.connection.on('connected', function() {
     console.log('Mongoose connected to ' + connectionString);
+
+    seedDatabase();
 });
 
-db.connection.on('error', function(err) {
+dbConnection.connection.on('error', function(err) {
     console.log('Mongoose connection error: ' + err);
 });
 
-db.connection.on('disconnected', function() {
+dbConnection.connection.on('disconnected', function() {
     console.log('Mongoose disconnected');
 });
 gracefulShutdown = function(msg, callback) {
@@ -39,3 +41,28 @@ process.on('SIGTERM', function() {
         process.exit(0);
     });
 });
+
+function seedDatabase() {
+
+    var database = mongoose.connection;
+    var seedData = require("./seedData")();
+
+    var Speaker = require("./speaker.model"),
+        Session = require("./session.model");
+
+    Speaker.find()
+        .exec(function(err, speakers) {
+            if (speakers.length === 0) {
+                console.log("Seeding speakers data into database ...");
+                database.collection("Speakers").insert(seedData.speakers);
+            }
+        });
+
+    Session.find()
+        .exec(function(err, sessions) {
+            if (sessions.length === 0) {
+                console.log("Seeding sessions data into database ...");
+                database.collection("Sessions").insert(seedData.sessions);
+            }
+        });
+}

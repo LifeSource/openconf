@@ -16,6 +16,7 @@ module.exports = function() {
 
     function use(req, res, next) {
        Session.findById(req.params.id,  function (err, session) { 
+
            if (err) {
                res.status(500).send(err);
            } else if (session) {
@@ -40,8 +41,8 @@ module.exports = function() {
     }
 
     function post(req, res) {
-        var session = new Session(req.body);
 
+        var session = new Session(req.body);
         session.save(function (err, session) {
             (err) ? res.status(500).send(err) : res.status(201).send(session);
         });

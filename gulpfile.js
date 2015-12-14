@@ -6,7 +6,58 @@ var gulp = require("gulp"),
     browserify = require("browserify"),
     browserSync = require("browser-sync"),
     source = require("vinyl-source-stream"),
+    bundler = require("aurelia-bundler"),
     $ = require("gulp-load-plugins")({lazy: true});
+
+// ------ Aurelia bundling ----------------------------- 
+var bundleConfig = {
+    force: true,
+    packagePath: ".",
+    bundles: {
+        "dist/app-build": {
+            includes: [
+                "*",
+                "*.html!text",
+                "*.css!text",
+                "bootstrap/css/bootstrap.css!text"
+            ],
+            options: {
+                inject: true,
+                minify: true
+            }
+        },
+        "dist/aurelia": {
+            includes: [
+                'aurelia-framework@1.0.0-beta.1.0.3',
+                'npm:aurelia-bootstrapper@1.0.0-beta.1',
+                'aurelia-fetch-client',
+                'aurelia-router',
+                'aurelia-animator-css',
+                'github:aurelia/templating-binding',
+                'github:aurelia/templating-resources',
+                'github:aurelia/templating-router',
+                'github:aurelia/loader-default',
+                'github:aurelia/history-browser',
+                'github:aurelia/logging-console'
+            ],
+            options: {
+                inject: true,
+                minify: true
+            }
+        }
+    }
+};
+
+
+gulp.task("bundle", function () {
+    return bundler.bundle(bundleConfig);
+});
+
+gulp.task("unbundle", function () {
+    return bunder.unbundle(bundleConfig);
+});
+
+// ----------------------------------------------------
 
 var config = require("./config")();
 
@@ -240,8 +291,7 @@ function serve(isDev) {
     	env: {
     		"PORT": config.port,
     		"NODE_ENV": isDev ? "dev" : "production"
-    	},
-    	watch: [config.server]
+    	}
     };
 
     $.nodemon(options)
@@ -290,8 +340,8 @@ function startBrowserSync(isDev) {
     }
 
     var options = {
-    	proxy: "localhost:" + config.port,
-    	port: 8000,
+        proxy: "localhost:" + config.port,
+        port: 8000,
     	files: isDev ? [
     		config.client + "**/*.*",
     		"!" + config.styles,

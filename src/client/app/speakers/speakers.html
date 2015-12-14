@@ -9,7 +9,7 @@
             <li repeat.for="speaker of speakers">
                 <div class="speaker-tile" click.delegate="speakerDetails(speaker._id)">
                     <img class="thumbnail" src="/images/${speaker.imageUrl}" alt="${speaker.name}'s image" />
-                    <strong>${speaker.name}</strong>
+                    <span>${speaker.name}</span>
                 </div>
             </li>
         </ul>

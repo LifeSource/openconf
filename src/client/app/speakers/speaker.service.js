@@ -3,6 +3,7 @@ import {HttpClient} from "aurelia-http-client";
 
 let baseUrl = "/api/speakers/";
 
+
 @inject(HttpClient)
 export class SpeakerService {
 

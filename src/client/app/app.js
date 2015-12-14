@@ -1,7 +1,6 @@
 export class App {
 
     constructor() {
-
         this.year = new Date().getFullYear();
     }
     

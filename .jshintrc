@@ -4,5 +4,7 @@
     "quotmark": false,
     "browser": true,
     "node": true,
-    "esnext": true
+    "expr": true,
+    "esnext": true,
+    "esversion": 6
 }

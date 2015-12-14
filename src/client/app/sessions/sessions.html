@@ -1,14 +1,32 @@
 <template>
 
+    <require from="../core/sort"></require>
+
     <h1 class="heading-title sessions-page-title text-center">
         <i class="fa fa-bars"></i>
-        Sessions (${sessions.length})
+        Sessions [ ${sessions.length} ]
     </h1>
 
+    <div class="session-dashboard">
+        
+        <div> 
+            <select id="column" ref="column">
+                <option value="name">name</option>
+                <option value="speaker">speaker</option>
+                <!--<option repeat.for="option of sortOptions" value="{option}">${option}</option>-->
+            </select>
+            <select id="direction" ref="direction">
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
+        </div>
+        <input id="search" type="text" name="search" placeholder="Search for sessions ...">
+    </div>
 
     <ul class="sessions-list">
-        <li click.delegate="showSessionDetails(session._id)" 
-            repeat.for="session of sessions">
+        <li repeat.for="session of sessions | sort: column.value : direction.value">
+            <!--click.delegate="showSessionDetails(session._id)">-->
+
             <div class="row">
                 <div class="col-md-2" repeat.for="speaker of session.speakers">
                     <img src="/images/${speaker.imageUrl}" alt="${speaker.name}' image">
@@ -28,7 +46,6 @@
                     <i class="slots">${30 - session.slots}</i>
                 </div>
                 <div class="col-md-2">
-                    <a class="btn btn-lg btn-success" if.bind="isFull(session.slots)">Full</a>
                     <button click.delegate="editSession(session._id)" class="btn btn-lg btn-info pull-right">Edit</button>
                 </div>
             </div>

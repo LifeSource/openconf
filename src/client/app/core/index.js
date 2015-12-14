@@ -1,5 +1,10 @@
 export function configure(aurelia) {
 
-    aurelia.globalResources("../navMenu");
+    aurelia.globalResources([
+        "../navMenu", 
+        "../sort",
+        "../date",
+        "../currency"
+    ]);
     
 }

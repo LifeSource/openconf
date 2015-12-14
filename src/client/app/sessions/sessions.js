@@ -6,6 +6,7 @@ import {Router} from "aurelia-router";
 import {SessionService} from "../sessions/session.service";    
 import {SpeakerService} from "../speakers/speaker.service";
 
+
 @inject(Router, SessionService, SpeakerService)
 export class Sessions {
 
@@ -14,7 +15,7 @@ export class Sessions {
        this.sessionService = sessionService;
        this.speakerService = speakerService;
 
-       this.availability = undefined;
+       this.sortOptions = [ "name", "speaker" ];
     }
     
     activate() {
@@ -32,7 +33,7 @@ export class Sessions {
     }
 
     showSessionDetails(id) {
-        this.router.navigateToRoute("SessionDetails", { id: id});
+        this.router.navigateToRoute("SessionDetails", {id: id});
     }
 
     editSession(id) {
@@ -40,8 +41,6 @@ export class Sessions {
     }
 
     isFull(slots) {
-        console.log("HERE in SLOTS");
-        console.log(slots);
         return slots === 30;
     }
 }
