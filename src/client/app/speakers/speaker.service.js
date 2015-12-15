@@ -31,7 +31,7 @@ export class SpeakerService {
 
    updateSpeaker(speaker) {
       return this.http
-        .put(baseUrl + speaker._id, speaker)
+        .patch(baseUrl + speaker._id, speaker)
         .then((response) => response.content);
    }
 

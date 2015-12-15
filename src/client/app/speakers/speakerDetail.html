@@ -5,9 +5,30 @@
             <img src="/images/${speaker.imageUrl}" alt="${speaker.name}'s profile image" />.
         </div>
         <div class="bio">
-            <h3 class="speakerName"> ${speaker.name} </h3>
+            <h3 class="speakerName"> 
+                ${speaker.name}
+                <i class="fa fa-pencil" click.delegate="toggleEditForm()"></i>
+            </h3>
             <div class="speakerProfile"> ${speaker.bio} </div>
         </div>
+    </div>
+
+    <div class="editForm">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" class="form-control" type="text" placeholder="Name ..." value.bind="speaker.name">
+            </div>
+            <div class="form-group">
+                <label for="bio">Biography</label>
+                <textarea id="bio" class="form-control" name="bio" cols="30" rows="10" placeholder="biography" value.bind="speaker.bio"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-default" click.delegate="toggleEditForm()">Cancel</button>
+                <button class="btn btn-success pull-right" click.delegate="updateSpeaker()">Save</button>
+            </div>
+        </form>
     </div>
 
 </template>

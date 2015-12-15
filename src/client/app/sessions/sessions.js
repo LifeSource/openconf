@@ -6,7 +6,6 @@ import {Router} from "aurelia-router";
 import {SessionService} from "../sessions/session.service";    
 import {SpeakerService} from "../speakers/speaker.service";
 
-
 @inject(Router, SessionService, SpeakerService)
 export class Sessions {
 
@@ -14,7 +13,6 @@ export class Sessions {
        this.router         = router;
        this.sessionService = sessionService;
        this.speakerService = speakerService;
-
        this.sortOptions = [ "name", "speaker" ];
     }
     

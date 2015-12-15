@@ -24,10 +24,16 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.20",
     "font-awesome": "npm:font-awesome@4.5.0",
+    "jquery": "github:components/jquery@2.1.4",
     "lodash": "npm:lodash@3.10.1",
     "moment": "npm:moment@2.10.6",
     "numeral": "npm:numeral@1.5.3",
     "text": "github:systemjs/plugin-text@0.0.4",
+    "toastr": "github:CodeSeven/toastr@2.1.2",
+    "github:CodeSeven/toastr@2.1.2": {
+      "css": "github:systemjs/plugin-css@0.1.20",
+      "jquery": "github:components/jquery@2.1.4"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },

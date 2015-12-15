@@ -1,93 +1,93 @@
-module.exports = function () {
+module.exports = function() {
 
     var port = process.env.PORT || 8888,
-    	env = process.env.NODE_ENV || "dev";
+        env = process.env.NODE_ENV || "dev";
 
     var root = "./",
-    	src = root + "src/",
-    	client = src + "client/",
-    	clientApp = client + "app/",
-    	css = client + "css/",
-    	styles = client + "styles/",
-    	images = client + "images/",
+        src = root + "src/",
+        client = src + "client/",
+        clientApp = client + "app/",
+        css = client + "css/",
+        styles = client + "styles/",
+        images = client + "images/",
         transpiled = client + "transpiled/",
-    	server = src + "server/",
-    	build = root + "dist/",
-    	temp = client + "temp/",
+        server = src + "server/",
+        build = root + "dist/",
+        temp = client + "temp/",
         report = root + "report/",
         specRunnerFile = "specs.html",
         wiredep = require('wiredep'),
-        bowerFiles = wiredep({devDependencies: true})['js'], // jshint ignore:line
-    	nodeModules = root + "node_modules/",
+        bowerFiles = wiredep({ devDependencies: true })['js'], // jshint ignore:line
+        nodeModules = root + "node_modules/",
         jspmPackages = root + "jspm_packages/",
-    	bowerComponents = root + "bower_components/",
-    	ignore = [nodeModules, bowerComponents];
+        bowerComponents = root + "bower_components/",
+        ignore = [nodeModules, bowerComponents];
 
     var config = {
-    	// Environment
-    	env: env,
-    	port: port,
-    	// Paths
-    	root: root,
-    	src: src,
-    	temp: temp,
-    	build: build,
+        // Environment
+        env: env,
+        port: port,
+        // Paths
+        root: root,
+        src: src,
+        temp: temp,
+        build: build,
         report: report,
-    	css: css,
-    	fonts: bowerComponents + "font-awesome/fonts/**/*.*",
-    	html: clientApp + "**/*.html",
-    	htmlTemplates: clientApp + "**/*.html",
-    	images: images + "**/*.*",
-    	client: client,
-    	clientApp: clientApp,
+        css: css,
+        fonts: bowerComponents + "font-awesome/fonts/**/*.*",
+        html: clientApp + "**/*.html",
+        htmlTemplates: clientApp + "**/*.html",
+        images: images + "**/*.*",
+        client: client,
+        clientApp: clientApp,
         transpiled: transpiled,
         transpiledJS: transpiled + "**/*.js",
-    	styles: styles + "**/*.styl",
-    	server: server,
-    	// Files
-    	nodeServer: server + "server.js",
-    	index: client + "index.html",
+        styles: styles + "**/*.styl",
+        server: server,
+        // Files
+        nodeServer: server + "server.js",
+        index: client + "index.html",
         buildIndex: build + "index.html",
-    	siteCss: css + "site.css",
-    	// JavaScripts
-    	allJs: [
-    		clientApp + "**/*.js",
-    		client + "**/*.js",
-    		root + "*.js"
-    	],
-    	js: [
+        siteCss: css + "site.css",
+        // JavaScripts
+        allJs: [
+            clientApp + "**/*.js",
+            client + "**/*.js",
+            root + "*.js"
+        ],
+        js: [
             jspmPackages + "system.js",
-    		client + "config.js",
-    		client + "aurelia-startup.js"
-    	],
-    	// Optimized files
-    	optimized: {
-    		app: "app.js",
-    		lib: "lib.js"
-    	},
-    	// Template Cache
-    	templateCache: {
-    		file: "templates.js",
-    		options: {
-    			module: "app.core",
-    			standAlone: false,
-    			root: "app/"
-    		}
-    	},
-    	// Bower and NPM
-    	nodeModules: nodeModules,
-    	bowerComponents: bowerComponents,
-    	bower: {
-    		json: root + "bower.json",
-    		directory: bowerComponents,
-    		ignorePath: "../.."
-    	},
-    	packages: [
-    		"./package.json",
-    		"./bower.json"
-    	],
-    	// Browser Sync
-    	browserReloadDelay: 1000,
+            client + "config.js",
+            client + "aurelia-startup.js"
+        ],
+        // Optimized files
+        optimized: {
+            app: "app.js",
+            lib: "lib.js"
+        },
+        // Template Cache
+        templateCache: {
+            file: "templates.js",
+            options: {
+                module: "app.core",
+                standAlone: false,
+                root: "app/"
+            }
+        },
+        // Bower and NPM
+        nodeModules: nodeModules,
+        bowerComponents: bowerComponents,
+        bower: {
+            json: root + "bower.json",
+            directory: bowerComponents,
+            ignorePath: "../.."
+        },
+        packages: [
+            "./package.json",
+            "./bower.json"
+        ],
+        // Browser Sync
+        browserReloadDelay: 1000,
         /**
          * specs.html, our HTML spec runner
          */
@@ -114,14 +114,14 @@ module.exports = function () {
         serverIntegrationSpecs: [client + '/tests/server-integration/**/*.spec.js']
     };
 
-    config.getWiredepDefaultOptions = function () {
-    	var options = {
-    		json: config.bower.json,
-    		directory: config.bower.directory,
-    		ignorePath: config.bower.ignorePath
-    	};
+    config.getWiredepDefaultOptions = function() {
+        var options = {
+            json: config.bower.json,
+            directory: config.bower.directory,
+            ignorePath: config.bower.ignorePath
+        };
 
-    	return options;
+        return options;
     };
 
     /**
@@ -148,9 +148,15 @@ module.exports = function () {
                 dir: report + 'coverage',
                 reporters: [
                     // reporters not supporting the `file` property
-                    {type: 'html', subdir: 'report-html'},
-                    {type: 'lcov', subdir: 'report-lcov'},
-                    {type: 'text-summary'} //, subdir: '.', file: 'text-summary.txt'}
+                    {
+                        type: 'html',
+                        subdir: 'report-html'
+                    }, {
+                        type: 'lcov',
+                        subdir: 'report-lcov'
+                    }, {
+                        type: 'text-summary'
+                    } //, subdir: '.', file: 'text-summary.txt'}
                 ]
             },
             preprocessors: {}

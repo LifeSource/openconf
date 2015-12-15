@@ -8,47 +8,55 @@
     </h1>
 
     <div class="session-dashboard">
-        
-        <div> 
-            <select id="column" ref="column">
-                <option value="name">name</option>
-                <option value="speaker">speaker</option>
-                <!--<option repeat.for="option of sortOptions" value="{option}">${option}</option>-->
-            </select>
-            <select id="direction" ref="direction">
-                <option value="ascending">Ascending</option>
-                <option value="descending">Descending</option>
-            </select>
-        </div>
-        <input id="search" type="text" name="search" placeholder="Search for sessions ...">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="sortOptions">Sort:</label>
+                <select id="sortOptions" class="form-control" ref="sortOptions">
+                    <option value="name">Session Name</option>
+                    <option value="slots">Slots Available</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label  for="order">Order:</label>
+                <select id="order" class="form-control"  ref="order">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+            </div>
+        </form>
     </div>
 
-    <ul class="sessions-list">
-        <li repeat.for="session of sessions | sort: column.value : direction.value">
-            <!--click.delegate="showSessionDetails(session._id)">-->
+    <div>
 
-            <div class="row">
-                <div class="col-md-2" repeat.for="speaker of session.speakers">
-                    <img src="/images/${speaker.imageUrl}" alt="${speaker.name}' image">
-                </div>
-                <div class="col-md-6">
-                    <h4> ${session.name} </h4>
-                    <div>
-                        <strong>Speaker:</strong> ${session.speakers[0].name}
-                        <br>
-                        <strong>When:</strong> ${session.time}
-                        <br>
-                        <strong>Location:</strong> ${session.location}
+        <ul class="sessions-list">
+            <li click.delegate="showSessionDetails(session._id)"
+                repeat.for="session of sessions | sort: sortOptions.value: order.value">
 
+                <div class="row">
+                    <div class="col-md-2" repeat.for="speaker of session.speakers">
+                        <img src="/images/${speaker.imageUrl}" alt="${speaker.name}' image">
+                    </div>
+                    <div class="col-md-6">
+                        <h4> ${session.name} </h4>
+                        <div>
+                            <strong>Speaker:</strong> ${session.speakers[0].name}
+                            <br>
+                            <strong>Slots:</strong> ${session.slots}
+                            <br>
+                            <strong>When:</strong> ${session.time}
+                            <br>
+                            <strong>Location:</strong> ${session.location}
+
+                        </div>
+                    </div>
+                    <div class="col-md-2 slots">
+                        <i class="slots">${session.slots}</i>
+                    </div>
+                    <div class="col-md-2">
+                        <button click.delegate="editSession(session._id)" class="btn btn-lg btn-info pull-right">Edit</button>
                     </div>
                 </div>
-                <div class="col-md-2 slots">
-                    <i class="slots">${30 - session.slots}</i>
-                </div>
-                <div class="col-md-2">
-                    <button click.delegate="editSession(session._id)" class="btn btn-lg btn-info pull-right">Edit</button>
-                </div>
-            </div>
-        </li>
-    </ul>
+            </li>
+        </ul>
+    </div>
 </template>
