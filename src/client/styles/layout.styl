@@ -1,0 +1,51 @@
+.html
+    box-sizing border-box
+
+img, video, embed, ul,  header, .main-content, .sponsors, footer
+    width 100%
+
+body
+    font-family "Lato", serif 
+
+.site-container
+    display flex
+    flex-flow column wrap
+
+    h1, h2, h3, h4, h5, h6, ul
+        margin 0
+        padding 0
+
+    a, a:link, a:visited, a:hover, a:active
+        color #333333
+        text-decoration none
+
+.navigation
+    display flex
+    height 100px
+    background-image url("/images/tiles/whitedust.png")
+
+    h1, ul
+        margin auto
+        padding-left 1.5%
+    ul 
+        list-style none
+    li 
+        font-size 1.5em
+        display inline-block
+        margin 0 2%
+
+    i
+        margin auto
+        font-size 2.5em
+
+.active
+    border-bottom 3px solid #fa3000
+    transition border 0.5s linear
+
+.main-content
+    background #fffff
+
+footer
+    text-align center
+    background-image url("/images/tiles/graytile.png")
+

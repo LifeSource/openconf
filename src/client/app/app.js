@@ -18,7 +18,7 @@ export class App {
             },
             {
                 route: "sessions",
-                name: "Sessions List",
+                name: "sessions",
                 title: "Sessions",
                 moduleId: "app/sessions/sessions",
                 nav: true
@@ -39,7 +39,7 @@ export class App {
             },
             {
                 route: "speakers",
-                name: "Speakers",
+                name: "speakers",
                 title: "Speakers",
                 moduleId: "app/speakers/speakers",
                 nav: true

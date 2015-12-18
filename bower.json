@@ -1,19 +1,21 @@
 {
-    "name": "openconf",
-    "version": "1.0.0",
-    "description": "openconf",
-    "authors": [],
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "devDependencies": {
-    },
-    "main": "",
-    "moduleType": [],
-    "homepage": ""
+  "name": "openconf",
+  "version": "1.0.0",
+  "description": "openconf",
+  "authors": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "main": "",
+  "moduleType": [],
+  "homepage": "",
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3"
+  }
 }

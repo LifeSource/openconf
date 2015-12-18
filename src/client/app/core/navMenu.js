@@ -6,12 +6,14 @@ export class NavMenu {
     @bindable router = null
 
     constructor() {
-        this.icons = [];
+        this.icons = [
+            { name: "home", state: "home" },
+            { name: "bars", state: "sessions" },
+            { name: "user", state: "speakers" }
+        ];
     }
 
-    activate() {
-        this.icons = ["home", "bar", "user"];
-
-        console.log(this.icons);
+    goToRoute(route) {
+        this.router.navigateToRoute(route);
     }
 }

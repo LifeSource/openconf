@@ -1,15 +1,11 @@
 <template>
-    <div class="container">
-        <div class="navigation">
-            <h1 class="title">OpenConf</h1>
-            <header>
-                <nav-menu router.bind="router"></nav-menu>
-            </header>
-        </div>
+    <div class="site-container">
+        <nav-menu class="navigation" router.bind="router"></nav-menu>
 
         <div class="main-content">
             <router-view></router-view>
         </div>
 
+        <footer class="text-center">OpenConf &copy; ${year}</footer>
     </div>
 </template>

@@ -1,0 +1,80 @@
+.html {
+  box-sizing: border-box;
+}
+img,
+video,
+embed,
+ul,
+header,
+.main-content,
+.sponsors,
+footer {
+  width: 100%;
+}
+body {
+  font-family: "Lato", serif;
+}
+.site-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+.site-container h1,
+.site-container h2,
+.site-container h3,
+.site-container h4,
+.site-container h5,
+.site-container h6,
+.site-container ul {
+  margin: 0;
+  padding: 0;
+}
+.site-container a,
+.site-container a:link,
+.site-container a:visited,
+.site-container a:hover,
+.site-container a:active {
+  color: #333;
+  text-decoration: none;
+}
+.navigation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  background-image: url("/images/tiles/whitedust.png");
+}
+.navigation h1,
+.navigation ul {
+  margin: auto;
+  padding-left: 1.5%;
+}
+.navigation ul {
+  list-style: none;
+}
+.navigation li {
+  font-size: 1.5em;
+  display: inline-block;
+  margin: 0 2%;
+}
+.navigation i {
+  margin: auto;
+  font-size: 2.5em;
+}
+.active {
+  border-bottom: 3px solid #fa3000;
+  -webkit-transition: border 0.5s linear;
+  transition: border 0.5s linear;
+}
+.main-content {
+  background: #fff f;
+}
+footer {
+  text-align: center;
+  background-image: url("/images/tiles/graytile.png");
+}

@@ -1,184 +1,25 @@
 coolBlue = #71bdd6
+minorSpacing = 1.5%
 
-.container
-    max-width 1200px
-    margin 0 auto
+.home
+    display flex
+    flex-wrap wrap
+    font-size 1.2em
+    line-height 2.0em
+    padding minorSpacing
+
+.sponsors
+
+    h2
+        margin-bottom minorSpacing
+
+.sponsor-images
+    display flex
+    flex-flow row wrap 
     justify-content center
-    line-height 2.0
 
-body
-    font-family "Lato", sans-serif
-    background-image url("/images/tiles/dust.png")
-    background-repeat repeat
-
-h1, h2, h3, h4, h5, h6, ul 
-    margin 0
-    padding 0
-
-.text-center 
-    text-align center
-
-.site-heading
-    margin-bottom 10px
-    font-family "Open Sans", serif
-
-.navigation
-    padding 20px auto
-    margin-bottom 20px
-    font-family "Open Sans", serif
-
-a:link, a:visited, a:hover, a:active
-    color #33
-    text-decoration none    
-p
-    font-size 1.1em
-
-ul
-    list-style none
-
-i, .heading-title
-    color #55
-
-// Title
-.title 
-    margin-left 20px
-    margin-bottom 20px
-
-// Navigation
-.nav-list
-    margin 0
-    padding 0
-
-.nav-list li
-    font-size 1.5em
-    margin-right 1.5%
-    padding 0 2.5%
-    display inline-block
-
-.nav-list li:hover
-    transition background 0.8s linear
-
-.active
-    border-left 5px solid #ff875f
-    border-right 5px solid #ff875f
-
-// home page
-.room-image
-    box-sizing border-box
-    padding 15px
-
-// Sessions
-.sessions-list li
-    padding 20px
-    margin-bottom 20px
-    
-
-.sessions-list img
-    border-radius 15px
-
-.sessions-list li:hover
-    color #ff
-    background #55
-    border-radius 10px
-    transition background 0.8s linear
-
-.slots
-    font-size 48px
-
-// Session Dashboard
-.session-dashboard
-    height 100px
-    margin-bottom 10px
-
-#search:focus
-    border 2px solid green
-
-i.fa-search
-    font-size 3.5em
-    display inline-block
-
-#search 
-    width 50%
-    height 50px
-    padding 1.5%
-    font-size 2.0em
-    border-radius 5px
-
-
-// Speakers
-.speakers-list,
-.speakers-list-container
-    margin 0 auto
-
-.heading-title
-    margin-bottom 40px
-
-.speakers-list li
-    padding 1.5% 
-    text-align center
-    display inline-block
-
-.speakers-list li:hover
-    background-image url("/images/tiles/sand.png")
-
-// Speaker Details
-.bioImage
-    float left
-    width 10%
-
-.bio
-    float left
-    width 90%
-
-.editForm
-    right 0
-    top 0
-    height 100%
-    width 100%
-    max-width 50%
-    box-sizing border-box
-    margin-left -80%
-    transition margin 500ms ease-in-out;
-
-.form-open
-    margin-left 10%
-
-// Footer
-footer
-    text-align center
-    clear both
-    position fixed
-    bottom 0
-    font-size 1.5em
-
-// Venue
-.venue
-     display flex
-     flex-wrap wrap
-     text-align justify
-
-.venue p
-    padding 0
-    margin 0
-
-.venue img
-    max-width 100%
-    margin 0 auto
-    display block
-
-@media screen and (min-width: 900px)
-    .room-image, .room-details
-        width 50%
-
-@media screen and (max-width: 550px)
-    .bioImage, .speakerProfile, .speakerName
-        width 100%
-
-    .sessions-list li    
-        border 2px solid #aa
-        border-radius 5px
-
-    .sessions-page-title, .title
-        text-align center
-    .nav-list 
-        display none
+    img
+        display inline-block
+        margin minorSpacing
+        width 128px
+        height 128px

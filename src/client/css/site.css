@@ -1,162 +1,4 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  line-height: 2;
-}
-body {
-  font-family: "Lato", sans-serif;
-  background-image: url("/images/tiles/dust.png");
-  background-repeat: repeat;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul {
-  margin: 0;
-  padding: 0;
-}
-.text-center {
-  text-align: center;
-}
-.site-heading {
-  margin-bottom: 10px;
-  font-family: "Open Sans", serif;
-}
-.navigation {
-  padding: 20px auto;
-  margin-bottom: 20px;
-  font-family: "Open Sans", serif;
-}
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: #333;
-  text-decoration: none;
-}
-p {
-  font-size: 1.1em;
-}
-ul {
-  list-style: none;
-}
-i,
-.heading-title {
-  color: #555;
-}
-.title {
-  margin-left: 20px;
-  margin-bottom: 20px;
-}
-.nav-list {
-  margin: 0;
-  padding: 0;
-}
-.nav-list li {
-  font-size: 1.5em;
-  margin-right: 1.5%;
-  padding: 0 2.5%;
-  display: inline-block;
-}
-.nav-list li:hover {
-  -webkit-transition: background 0.8s linear;
-  transition: background 0.8s linear;
-}
-.active {
-  border-left: 5px solid #ff875f;
-  border-right: 5px solid #ff875f;
-}
-.room-image {
-  box-sizing: border-box;
-  padding: 15px;
-}
-.sessions-list li {
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.sessions-list img {
-  border-radius: 15px;
-}
-.sessions-list li:hover {
-  color: #fff;
-  background: #555;
-  border-radius: 10px;
-  -webkit-transition: background 0.8s linear;
-  transition: background 0.8s linear;
-}
-.slots {
-  font-size: 48px;
-}
-.session-dashboard {
-  height: 100px;
-  margin-bottom: 10px;
-}
-#search:focus {
-  border: 2px solid #008000;
-}
-i.fa-search {
-  font-size: 3.5em;
-  display: inline-block;
-}
-#search {
-  width: 50%;
-  height: 50px;
-  padding: 1.5%;
-  font-size: 2em;
-  border-radius: 5px;
-}
-.speakers-list,
-.speakers-list-container {
-  margin: 0 auto;
-}
-.heading-title {
-  margin-bottom: 40px;
-}
-.speakers-list li {
-  padding: 1.5%;
-  text-align: center;
-  display: inline-block;
-}
-.speakers-list li:hover {
-  background-image: url("/images/tiles/sand.png");
-}
-.bioImage {
-  float: left;
-  width: 10%;
-}
-.bio {
-  float: left;
-  width: 90%;
-}
-.editForm {
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  max-width: 50%;
-  box-sizing: border-box;
-  margin-left: -80%;
-  -webkit-transition: margin 500ms ease-in-out;
-  transition: margin 500ms ease-in-out;
-}
-.form-open {
-  margin-left: 10%;
-}
-footer {
-  text-align: center;
-  clear: both;
-  position: fixed;
-  bottom: 0;
-  font-size: 1.5em;
-}
-.venue {
+.home {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -164,38 +6,29 @@ footer {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  text-align: justify;
+  font-size: 1.2em;
+  line-height: 2em;
+  padding: 1.5%;
 }
-.venue p {
-  padding: 0;
-  margin: 0;
+.sponsors h2 {
+  margin-bottom: 1.5%;
 }
-.venue img {
-  max-width: 100%;
-  margin: 0 auto;
-  display: block;
+.sponsor-images {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-@media screen and (min-width: 900px) {
-  .room-image,
-  .room-details {
-    width: 50%;
-  }
-}
-@media screen and (max-width: 550px) {
-  .bioImage,
-  .speakerProfile,
-  .speakerName {
-    width: 100%;
-  }
-  .sessions-list li {
-    border: 2px solid #aaa;
-    border-radius: 5px;
-  }
-  .sessions-page-title,
-  .title {
-    text-align: center;
-  }
-  .nav-list {
-    display: none;
-  }
+.sponsor-images img {
+  display: inline-block;
+  margin: 1.5%;
+  width: 128px;
+  height: 128px;
 }

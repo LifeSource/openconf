@@ -1,10 +1,11 @@
 <template>
+    <h1>OpenConf</h1>
     <ul class="nav-list">
-        <i repeat.for="icon of icons" class="fa fa-${icon}">${icon}</i>
         <li repeat.for="nav of router.navigation" class="${nav.isActive ? 'active' : ''}">
-            <a href.bind="nav.href">
-                ${nav.title}
-            </a>
+            <a href.bind="nav.href"> ${nav.title} </a>
         </li>
     </ul>
+    <div class="nav-icons">
+        <i click.delegate="goToRoute(icon.state)" repeat.for="icon of icons" class="fa fa-${icon.name}"></i>
+    </div>
 </template>

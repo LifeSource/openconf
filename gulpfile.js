@@ -48,7 +48,6 @@ var bundleConfig = {
     }
 };
 
-
 gulp.task("bundle", function() {
     return bundler.bundle(bundleConfig);
 });
