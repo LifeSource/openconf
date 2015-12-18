@@ -1,5 +1,6 @@
 .html {
   box-sizing: border-box;
+  max-width: 100%;
 }
 img,
 video,
@@ -11,8 +12,9 @@ header,
 footer {
   width: 100%;
 }
-body {
-  font-family: "Lato", serif;
+body,
+.main-content {
+  font-family: "Lora", serif;
 }
 .site-container {
   display: -webkit-box;
@@ -61,6 +63,12 @@ body {
   font-size: 1.5em;
   display: inline-block;
   margin: 0 2%;
+}
+.navigation li:hover {
+  padding: 1.2%;
+  background: #71b937;
+  -webkit-transition: background 0.8s ease;
+  transition: background 0.8s ease;
 }
 .navigation i {
   margin: auto;

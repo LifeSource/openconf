@@ -9,7 +9,7 @@ export class NavMenu {
         this.icons = [
             { name: "home", state: "home" },
             { name: "bars", state: "sessions" },
-            { name: "user", state: "speakers" }
+            { name: "group", state: "speakers" }
         ];
     }
 

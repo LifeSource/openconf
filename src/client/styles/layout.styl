@@ -1,11 +1,12 @@
 .html
     box-sizing border-box
+    max-width 100%
 
-img, video, embed, ul,  header, .main-content, .sponsors, footer
+img, video, embed, ul,  header, .main-content, .sponsors, footer 
     width 100%
 
-body
-    font-family "Lato", serif 
+body, .main-content
+    font-family "Lora", serif 
 
 .site-container
     display flex
@@ -33,6 +34,11 @@ body
         font-size 1.5em
         display inline-block
         margin 0 2%
+
+    li:hover
+        padding 1.2%
+        background #71b937
+        transition background 0.8s ease
 
     i
         margin auto

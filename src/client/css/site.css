@@ -8,10 +8,10 @@
           flex-wrap: wrap;
   font-size: 1.2em;
   line-height: 2em;
-  padding: 1.5%;
+  padding: 2.5%;
 }
 .sponsors h2 {
-  margin-bottom: 1.5%;
+  margin-bottom: 2.5%;
 }
 .sponsor-images {
   display: -webkit-box;
@@ -28,7 +28,37 @@
 }
 .sponsor-images img {
   display: inline-block;
-  margin: 1.5%;
+  margin: 2.5%;
   width: 128px;
   height: 128px;
+}
+.speakers-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+          flex-flow: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("/images/tiles/whitedust.png");
+}
+.speakers-list li {
+  padding: 1.2%;
+  text-align: center;
+  display: inline-block;
+}
+.speakers-list li:hover {
+  background: #71bdd6;
+}
+.thumbnail {
+  width: 118px;
+}
+.post {
+  font-size: 1.5em;
+  line-height: 2.5em;
+  margin: 5%;
 }
