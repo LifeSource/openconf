@@ -2,14 +2,30 @@
     .home
         .about, .venue
             width 50%
+
+    .bio
+        width 75%
+
+    .bioImage
+        width 15%
+
     .nav-icons    
         display none
 
 @media screen and (max-width: 650px)
 
+    .navigation, .nav-icons, .bio, .bioImage
+        width 100%
+
+    .bioImage    
+        display flex
+        img
+            margin 2.5% auto
+    .bio
+        text-align justify
+
     .navigation 
         position fixed
-        width 100%
         display flex
         flex-flow column wrap
 
@@ -19,7 +35,6 @@
             display none
 
     .nav-icons
-        width 100%
         margin auto
         i
             margin auto

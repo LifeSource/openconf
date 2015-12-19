@@ -3,14 +3,37 @@
   .home .venue {
     width: 50%;
   }
+  .bio {
+    width: 75%;
+  }
+  .bioImage {
+    width: 15%;
+  }
   .nav-icons {
     display: none;
   }
 }
 @media screen and (max-width: 650px) {
+  .navigation,
+  .nav-icons,
+  .bio,
+  .bioImage {
+    width: 100%;
+  }
+  .bioImage {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .bioImage img {
+    margin: 2.5% auto;
+  }
+  .bio {
+    text-align: justify;
+  }
   .navigation {
     position: fixed;
-    width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -27,7 +50,6 @@
     display: none;
   }
   .nav-icons {
-    width: 100%;
     margin: auto;
   }
   .nav-icons i {

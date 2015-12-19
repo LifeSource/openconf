@@ -1,3 +1,7 @@
+.text-center {
+  text-align: center;
+}
+/* Home page */
 .home {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9,9 +13,6 @@
   font-size: 1.2em;
   line-height: 2em;
   padding: 2.5%;
-}
-.sponsors h2 {
-  margin-bottom: 2.5%;
 }
 .sponsor-images {
   display: -webkit-box;
@@ -32,6 +33,7 @@
   width: 128px;
   height: 128px;
 }
+/* Speakers list page  */
 .speakers-list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -61,4 +63,25 @@
   font-size: 1.5em;
   line-height: 2.5em;
   margin: 5%;
+}
+/* speaker's detail page */
+.speaker-details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin: 5%;
+}
+.speaker-details img {
+  width: 88px;
+  height: 100px;
+}
+.speaker-details .bio {
+  margin-left: 2.5%;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  text-align: justify;
 }
