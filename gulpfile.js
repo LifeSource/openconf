@@ -28,17 +28,17 @@ var bundleConfig = {
         },
         "dist/aurelia": {
             includes: [
-                'aurelia-framework@1.0.0-beta.1.0.3',
-                'npm:aurelia-bootstrapper@1.0.0-beta.1',
-                'aurelia-fetch-client',
-                'aurelia-router',
-                'aurelia-animator-css',
-                'github:aurelia/templating-binding',
-                'github:aurelia/templating-resources',
-                'github:aurelia/templating-router',
-                'github:aurelia/loader-default',
-                'github:aurelia/history-browser',
-                'github:aurelia/logging-console'
+                "aurelia-framework@1.0.0-beta.1.0.3",
+                "npm:aurelia-bootstrapper@1.0.0-beta.1",
+                "aurelia-fetch-client",
+                "aurelia-router",
+                "aurelia-animator-css",
+                "github:aurelia/templating-binding",
+                "github:aurelia/templating-resources",
+                "github:aurelia/templating-router",
+                "github:aurelia/loader-default",
+                "github:aurelia/history-browser",
+                "github:aurelia/logging-console"
             ],
             options: {
                 inject: true,
@@ -169,8 +169,8 @@ gulp.task("inject", ["wiredep", "styles"], function() {
  * Run the spec runner
  * @return {Stream}
  */
-gulp.task('serve-specs', ['build-specs'], function(done) {
-    log('run the spec runner');
+gulp.task("serve-specs", ["build-specs"], function(done) {
+    log("run the spec runner");
     serve(true /* isDev */ , true /* specRunner */ );
     done();
 });
@@ -179,10 +179,10 @@ gulp.task('serve-specs', ['build-specs'], function(done) {
  * Inject all the spec files into the specs.html
  * @return {Stream}
  */
-gulp.task('build-specs', [], function(done) {
-    log('building the spec runner');
+gulp.task("build-specs", [], function(done) {
+    log("building the spec runner");
 
-    var wiredep = require('wiredep').stream;
+    var wiredep = require("wiredep").stream;
     var templateCache = config.temp + config.templateCache.file;
     var options = config.getWiredepDefaultOptions();
     var specs = config.specs;
@@ -195,11 +195,11 @@ gulp.task('build-specs', [], function(done) {
     return gulp
         .src(config.specRunner)
         .pipe(wiredep(options))
-        .pipe(inject(config.js, '', config.jsOrder))
-        .pipe(inject(config.testlibraries, 'testlibraries'))
-        .pipe(inject(config.specHelpers, 'spechelpers'))
-        .pipe(inject(specs, 'specs', ['**/*']))
-        .pipe(inject(templateCache, 'templates'))
+        .pipe(inject(config.js, "", config.jsOrder))
+        .pipe(inject(config.testlibraries, "testlibraries"))
+        .pipe(inject(config.specHelpers, "spechelpers"))
+        .pipe(inject(specs, "specs", ["**/*"]))
+        .pipe(inject(templateCache, "templates"))
         .pipe(gulp.dest(config.client));
 });
 
@@ -267,7 +267,7 @@ gulp.task("bump", function() {
  *    gulp test --startServers
  * @return {Stream}
  */
-gulp.task('test', ['lint', 'templatecache'], function(done) {
+gulp.task("test", ["lint", "templatecache"], function(done) {
     startTests(true /*singleRun*/ , done);
 });
 
@@ -277,7 +277,7 @@ gulp.task('test', ['lint', 'templatecache'], function(done) {
  * To start servers and run midway specs as well:
  *    gulp autotest --startServers
  */
-gulp.task('autotest', function(done) {
+gulp.task("autotest", function(done) {
     startTests(false /*singleRun*/ , done);
 });
 
@@ -330,8 +330,8 @@ function serve(isDev) {
 // Utilities Functions
 
 function changeEvent(event) {
-    var srcPattern = new RegExp('/.*(?=/' + config.source + ')/');
-    log('File ' + event.path.replace(srcPattern, '') + ' ' + event.type);
+    var srcPattern = new RegExp("/.*(?=/" + config.source + ")/");
+    log("File " + event.path.replace(srcPattern, "") + " " + event.type);
 }
 
 function startBrowserSync(isDev) {
@@ -384,14 +384,14 @@ function startBrowserSync(isDev) {
 function startTests(singleRun, done) {
     var child;
     var excludeFiles = [];
-    var fork = require('child_process').fork;
-    var karma = require('karma').server;
+    var fork = require("child_process").fork;
+    var karma = require("karma").server;
     var serverSpecs = config.serverIntegrationSpecs;
 
     if (args.startServers) {
-        log('Starting servers');
+        log("Starting servers");
         var savedEnv = process.env;
-        savedEnv.NODE_ENV = 'dev';
+        savedEnv.NODE_ENV = "dev";
         savedEnv.PORT = 8888;
         child = fork(config.nodeServer);
     } else {
@@ -401,7 +401,7 @@ function startTests(singleRun, done) {
     }
 
     karma.start({
-        configFile: __dirname + '/karma.conf.js',
+        configFile: __dirname + "/karma.conf.js",
         exclude: excludeFiles,
         singleRun: !!singleRun
     }, karmaCompleted);
@@ -409,13 +409,13 @@ function startTests(singleRun, done) {
     ////////////////
 
     function karmaCompleted(karmaResult) {
-        log('Karma completed');
+        log("Karma completed");
         if (child) {
-            log('shutting down the child process');
+            log("shutting down the child process");
             child.kill();
         }
         if (karmaResult === 1) {
-            done('karma: tests failed with code ' + karmaResult);
+            done("karma: tests failed with code " + karmaResult);
         } else {
             done();
         }

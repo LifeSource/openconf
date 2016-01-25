@@ -20,18 +20,6 @@
   .bioImage {
     width: 100%;
   }
-  .bioImage {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .bioImage img {
-    margin: 2.5% auto;
-  }
-  .bio {
-    text-align: justify;
-  }
   .navigation {
     position: fixed;
     display: -webkit-box;
@@ -62,5 +50,20 @@
   .nav-icons,
   .site-heading {
     text-align: center;
+  }
+  .site-heading {
+    margin-bottom: 2.5%;
+  }
+  article {
+    text-align: justify;
+  }
+  .bioImage {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .bioImage img {
+    margin: 2.5% auto;
   }
 }

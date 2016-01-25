@@ -33,6 +33,11 @@
   width: 128px;
   height: 128px;
 }
+.main-content {
+  width: 100%;
+  padding: 2%;
+  overflow: hidden;
+}
 /* Speakers list page  */
 .speakers-list {
   display: -webkit-box;
@@ -84,4 +89,19 @@
   font-size: 1.5em;
   line-height: 1.5em;
   text-align: justify;
+}
+/* Sessions List */
+.sessions-list {
+  list-style: none;
+}
+.sessions-list li {
+  padding: 10px 0;
+}
+.sessions-list li:hover {
+  background: #ffe7ae;
+  -webkit-transition: background 0.5s ease-in;
+  transition: background 0.5s ease-in;
+}
+.sessions-list img {
+  margin-left: 10px;
 }

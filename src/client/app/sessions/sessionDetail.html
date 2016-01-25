@@ -10,18 +10,23 @@
             <form class="form-horizontal">
 
                 <div class="form-group">
-
                     <label class="control-label col-md-2" for="Name">Session name:</label>
                     <div class="col-md-6">
-
-                        <input class="form-control" type="text" value.bind="session.name">
+                        <input class="form-control" type="text" value.bind="session.name" readonly />
                     </div>
                 </div>
 
                 <div class="form-group">
+                     <label class="control-label col-md-2" for="speakerName">Speaker name:</label>
+                     <div class="col-md-4">
+                        <input class="form-control" type="text" value.bind="session.speakers[0].name" readonly>
+                     </div>
+                </div>
+
+                <div class="form-group">
                     <label class="control-label col-md-2" for="time">Time:</label>
-                    <div class="col-md-6">
-                        <input id="time" type="text" name="time" value.bind="session.time">
+                    <div class="col-md-2">
+                        <input id="time" class="form-control" type="text" name="time" value.bind="session.time" readonly />
                     </div>
                 </div>
             </form>
