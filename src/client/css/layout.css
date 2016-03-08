@@ -1,4 +1,5 @@
-.html {
+html,
+body {
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -63,13 +64,11 @@ body,
   display: inline-block;
   margin: 0 2%;
 }
-.navigation li:hover {
-  padding: 1.2%;
-  background: #71b937;
-  -webkit-transition: background 0.8s ease;
-  transition: background 0.8s ease;
+li:hover {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
-.navigation i {
+i.fa {
   margin: auto;
   font-size: 2.5em;
 }
