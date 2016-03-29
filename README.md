@@ -1,6 +1,6 @@
-# OpenConf
+# Web-conference-demo
 
-OpenConf is a web application for a fictious conference event. The intent was to use Aurelia to build out a rich data driven application.
+Web-conference-demo is a web application for a fictious conference event. The intent was to use Aurelia to build out a rich data driven application.
 
 ### Technologies
 
